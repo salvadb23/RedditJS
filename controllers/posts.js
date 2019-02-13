@@ -3,7 +3,7 @@ const Post = require('../models/post');
 module.exports = (app) => {
 
   // CREATE
-  app.post('/posts/new', (req, res) => {
+  app.post('/signup', (req, res) => {
     // INSTANTIATE INSTANCE OF POST MODEL
     const post = new Post(req.body);
     console.log(req.body)

@@ -1,0 +1,22 @@
+<nav class="navbar">
+	<a class="navbar-brand" href="/">Reddit.js</a>
+	<a href="/posts/new" class="btn btn-primary navbar-btn">New Post</a>
+	<ul class="nav navbar-nav navbar-right">
+      <li><a href="/logout">Logout</a></li>
+      <li><a href="/login">Login</a></li>
+      <li><a href="/sign-up">Sign Up</a></li>
+    </ul>
+</nav>
+<div class="container">
+    <form action="/sign-up" method="post">
+      <legend>Sign Up</legend>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" name="username" class="form-control" id="username" placeholder="">
+      </div>
+      <div class="form-group">
+        <label for="post-url">Password</label>
+        <input type="text" name="password" class="form-control" id="password" placeholder="">
+      </div>
+      <button type="submit" class="btn btn-primary">Sign-Up</button>
+    <form>
