@@ -15,4 +15,17 @@ module.exports = (app) => {
     })
   });
 
+  app.get('/', (req, res) => {
+    Post.find({})
+      .then(posts => {
+        res.render("posts-index", { posts });
+      })
+      .catch(err => {
+        console.log(err.message);
+      });
+  })
+
+  app.get('/posts/new', (req, res) => {
+    res.render('posts-new');
+  })
 };
