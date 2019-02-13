@@ -1,4 +1,17 @@
 require('dotenv').config();
+var checkAuth = (req, res, next) => {
+  console.log("Checking authentication");
+  if (typeof req.cookies.nToken === "undefined" || req.cookies.nToken === null) {
+    req.user = null;
+  } else {
+    var token = req.cookies.nToken;
+    var decodedToken = jwt.decode(token, { complete: true }) || {};
+    req.user = decodedToken.payload;
+  }
+
+  next();
+};
+
 const cookieParser = require('cookie-parser');
 const jwt = require('jsonwebtoken');
 const express = require('express')
@@ -9,6 +22,7 @@ const expressValidator = require('express-validator');
 require('./data/reddit-db');
 
 app.use(cookieParser());
+app.use(checkAuth);
 
 // Use Body Parser
 app.use(bodyParser.json());

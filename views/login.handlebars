@@ -1,6 +1,6 @@
 <nav class="navbar">
 	<a class="navbar-brand" href="/">Reddit.js</a>
-	{{#if currentUser}}
+	   {{#if currentUser}}
   <a href="/posts/new" class="btn btn-primary navbar-btn">New Post</a>
 {{/if}}
 <ul class="nav navbar-nav navbar-right">
@@ -13,8 +13,8 @@
 </ul>
 </nav>
 <div class="container">
-    <form action="/sign-up" method="post">
-      <legend>Sign Up</legend>
+    <form action="/login" method="post">
+      <legend>Login</legend>
       <div class="form-group">
         <label for="username">Username</label>
         <input type="text" name="username" class="form-control" id="username" placeholder="">
