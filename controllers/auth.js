@@ -22,4 +22,9 @@ module.exports = app => {
     res.render('signup');
   })
 
+  app.get('/logout', (req, res) => {
+    res.clearCookie('nToken');
+    res.redirect('/');
+  });
+
 };
